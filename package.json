@@ -4,7 +4,7 @@
   "description": "Blazingly fast CSS based hook to add theming to your react app.",
   "author": "Mane Sid",
   "license": "Apache-2.0",
-  "repository": "nekogd/react-hook-npm-publish-boilerplate",
+  "repository": "manesid/rhook-css-vars",
   "main": "dist/index.js",
   "engines": {
     "node": ">=8",
@@ -61,7 +61,10 @@
     "react",
     "react hooks",
     "typescript",
-    "npm"
+    "npm",
+    "react theme",
+    "theme",
+    "css"
   ],
   "dependencies": {}
 }

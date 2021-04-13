@@ -104,5 +104,34 @@ export default App;
 ## Props
 
 `theme` - `required` This is just an object with key-value pair (`css-variable-name : value`)
+
 `elementId` - By default the variables are applied to `html` element.if you want to use a custom element
 then make sure it is mounted and won't change after.
+
+## How does it work
+
+It's not a rocket science. You are simply changing the CSS variable that are on either the `html` element
+or on a psuedo-element `:root`
+
+Like this
+
+```css
+:root {
+  --yourVariable: red;
+}
+```
+
+This library simply takes a map of values that look like this:
+
+```js
+const theme = {
+  yourVariable: 'blue',
+};
+```
+
+This library removes the old CSS key once the `theme`-prop is changed or `theme`-prop is set to `null`.
+If the value is set to `null` then browser will set the `:root` CSS values.
+
+If the value is not `null` then the CSS variable are set to `html` by default.
+As we can know `html` has higher precedence than the psuedo-element `:root`.
+the CSS values will be overridden.
