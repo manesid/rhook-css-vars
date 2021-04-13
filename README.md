@@ -29,7 +29,6 @@ You need to import `{ Themer }` and use it anywhere in your application, providi
 
 ```jsx
 import React from 'react';
-
 import { Themer } from 'rhook-css-vars';
 
 const yourTheme = {
@@ -54,6 +53,7 @@ And now in your CSS use the variable name
 ## Changing theme
 
 You can change the theme dynamically by providing a new theme prop.
+You can use `Themer` without providing any children as well (Just like the below example)
 
 ```jsx
 import React, { useState } from 'react';
@@ -100,3 +100,9 @@ function App() {
 
 export default App;
 ```
+
+## Props
+
+`theme` - `required` This is just an object with key-value pair (`css-variable-name : value`)
+`elementId` - By default the variables are applied to `html` element.if you want to use a custom element
+then make sure it is mounted and won't change after.
