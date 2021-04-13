@@ -2,7 +2,9 @@
 
 Blazingly fast CSS based hook to add theming to your react app.
 
-![Example](./example.mp4)
+<video width="320" height="240" controls>
+  <source src="./example.mp4" type="video/mp4">
+</video>
 
 ## Why you should use it?
 
@@ -47,4 +49,54 @@ And now in your CSS use the variable name
 .yourCssClass {
   color: var(--cssVariablename);
 }
+```
+
+## Changing theme
+
+You can change the theme dynamically by providing a new theme prop.
+
+```jsx
+import React, { useState } from 'react';
+import { Themer } from 'rhook-css-vars';
+import './App.css';
+
+const redtheme = {
+  background: 'red',
+};
+
+const bluetheme = {
+  background: 'blue',
+};
+
+function App() {
+  const [theme, settheme] = useState('red');
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h3>Toggle Theme</h3>
+        <div>
+          <button
+            onClick={() => {
+              settheme('red');
+            }}
+            className="btn red"
+          >
+            Red
+          </button>
+          <button
+            onClick={() => {
+              settheme('blue');
+            }}
+            className="btn blue"
+          >
+            Blue
+          </button>
+        </div>
+        <Themer theme={theme === 'red' ? redtheme : bluetheme} />
+      </header>
+    </div>
+  );
+}
+
+export default App;
 ```
