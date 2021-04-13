@@ -1,6 +1,6 @@
 {
   "name": "rhook-css-vars",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Blazingly fast CSS based hook to add theming to your react app.",
   "author": "Mane Sid",
   "license": "Apache-2.0",
